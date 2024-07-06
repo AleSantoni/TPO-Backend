@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Datos</title>
+    <link rel="shortcut icon" href="../static/images/Logo-home-icono.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/gestion.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9e4e93b905.js" crossorigin="anonymous"></script>
+     <!-- REFERENCIA A SWEETALERT PARA ALERTAS VISUALES -->
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ 
+</head>
+
+<body class="gestion">
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <a href="/index.html">
+                <img src="../static/img/Logo-Home.png" alt="logo">
+            </a>
+            <div class="social-media">
+                <h1>Grupo Salud</h1>
+                <div class="social-media-ico">
+                    <ul>
+                        <li><a href=""><i class="fa-brands fa-instagram fa-l" style="color: #ff0040;"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-facebook fa-l" style="color: #1055cb;"></i></a></li>
+                        <li><a href=""><i class="fa-brands fa-linkedin fa-l" style="color: #74C0FC;"></i></a></li>
+                        <li><a href=""><i class="fa-regular fa-envelope fa-l" style="color: #696969;"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="search-navbar">
+            <i class="fa-solid fa-magnifying-glass" style="color: black;"></i>
+            <input type="text" required placeholder="Buscar...">
+        </div>
+        <button class="open-menu" id="open"><i class="fas fa-bars ico" style="color: #292929;"></i></button>
+        <nav class="nav" id="nav">
+            <ul class="nav-links">
+                <li><button class="close-menu" id="close"><i class="fas fa-times ico" style="color: #ffffff;"></i></button></li>
+                <li>
+                    <div class="search-menu">
+                        <i class="fa-solid fa-magnifying-glass" style="color: black;"></i>
+                        <input type="text" required placeholder="Buscar...">
+                    </div>
+                </li>
+                <li><a href="/planes">PLANES DE SALUD <i class="fa-solid fa-plus fa-fw" style="color: #63E6BE;"></i></a></li>
+                <li><a href="/DondeEstamos">DÓNDE ESTAMOS <i class="fa-solid fa-location-dot fa-fw" style="color: #c51616;"></i></a></li>
+                <li><a href="/index.html" id="m-register">Salir
+                    <i class="fa-solid fa-user fa-fw" style="color: #ffffff;"></i>
+                </a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <hr class="custom-hr">
+    <!-- MAIN -->
+    <main>
+        <section id="form" class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h2 class="titulo text-center mb-4">Gestión de usuarios</h2>
+        
+                    <form action="#" id="form-registro">
+                        <div class="form-group">
+                            <label for="name" class="text-md-right">Nombre</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="text-md-right">Correo electrónico</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-md-right">Contraseña</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="rol" class="text-md-right">Rol</label>
+                            <input type="text" class="form-control" id="rol" name="rol" required>
+                        </div>
+                        <input type="hidden" id="id-registro">
+                        <button type="button" id="btn-save-registro" class="btn">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="list" class="container">
+            <h3 class="subtitle">Listado de usuarios</h3>
+            <div class="table-responsive">
+                <table id="list-table-registros" class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Contraseña</th>
+                            <th scope="col">Rol</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-table-registros">
+                        <!-- Aquí se llenará dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Grupo Salud. Todos los derechos reservados.</p>
+            
+        </div>
+    </footer>
+    <!-- SCRIPTS -->
+    <script src="./static/js/main.js"></script>
+    
+    <script src="../static/js/crud-registro-fetch.js"></script>
+    
+
+    
+</body>
+
+</html>
